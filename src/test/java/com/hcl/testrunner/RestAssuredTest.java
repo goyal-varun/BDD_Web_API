@@ -36,9 +36,6 @@ public class RestAssuredTest {
 	public void deleteUserByID() {
 		
 		
-		
 	}
-
-	
 	
 }

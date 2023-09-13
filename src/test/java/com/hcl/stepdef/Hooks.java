@@ -22,7 +22,6 @@ public class Hooks {
 	@Before
 	public void initBrowser() throws MalformedURLException {
 		//System.out.println("Before Hook");
-		
 		if (!browserType.equals("api"))
 			DriverUtils.getDriver();
 	}

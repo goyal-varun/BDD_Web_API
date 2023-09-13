@@ -1,0 +1,49 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1694633222.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"id",
+		"name",
+		"courses"
+	],
+	"properties": {
+		"id": {
+			"$id": "#root/id", 
+			"title": "Id", 
+			"type": "integer",
+			"examples": [
+				30
+			],
+			"default": 0
+		},
+		"name": {
+			"$id": "#root/name", 
+			"title": "Name", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Ramesh Naidu"
+			],
+			"pattern": "^.*$"
+		},
+		"courses": {
+			"$id": "#root/courses", 
+			"title": "Courses", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/courses/items", 
+				"title": "Items", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"java 12"
+				],
+				"pattern": "^.*$"
+			}
+		}
+	}
+}

@@ -11,7 +11,7 @@ import io.restassured.response.Response;
 public class UserAPIStepDef {
 	
 	Response response = null;
-	int createdUserId = 0;
+	int studentId = 0;
 	
 	@When("User send the post api for creating the user")
 	public void user_send_the_post_api_for_creating_the_user() {
@@ -21,12 +21,12 @@ public class UserAPIStepDef {
 		response.then().log().all();
 	}
 
-	@Then("validate the response is {int}")
-	public void validate_the_response_is(Integer int1) {
+	@Then("validate the users response is {int}")
+	public void validate_the_users_response_is(Integer int1) {
 		Assert.assertEquals(response.statusCode(), 201);
 		
-		createdUserId = response.path("id");
-		System.out.println("successfully reterived the user id "+createdUserId);
+		studentId = response.path("id");
+		System.out.println("successfully reterived the user id "+studentId);
 	}
 	
 
