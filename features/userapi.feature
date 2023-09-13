@@ -4,7 +4,7 @@ Feature: User Api Feature
   @api @createuserapi
   Scenario: Create user with api
     When User send the post api for creating the user
-    Then validate the response is 200
+    Then validate the users response is 200
     
 
   

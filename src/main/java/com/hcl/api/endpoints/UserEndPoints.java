@@ -10,10 +10,11 @@ import io.restassured.response.Response;
 
 public class UserEndPoints {
 	
-	static String baseURI = "https://gorest.co.in";
+	Response response = null;
+	static String usersBaseURI = "https://gorest.co.in";
 	static String usersEndPoint = "/public/v2/users";
-	static String bearerToken = "Bearer 9f33a2e244d16558635ca44c9ad37489ee30140c73e0af602a2ba11edfe8063d";
-
+	static String usersBearerToken = "Bearer 9f33a2e244d16558635ca44c9ad37489ee30140c73e0af602a2ba11edfe8063d";
+	
 	public Response createUser() {
 		// POST request
 
@@ -27,15 +28,14 @@ public class UserEndPoints {
 		dataVals.setName(fakeData.name().fullName());
 		dataVals.setStatus("active");
 
-		Response response = given().header("Content-Type", ContentType.JSON).header("Authorization", bearerToken)
-				.body(dataVals)
-				.baseUri(baseURI)
-
-				.when().post(usersEndPoint);
+		response =	given()
+						.header("Content-Type", ContentType.JSON).header("Authorization", usersBearerToken)
+						.body(dataVals)
+						.baseUri(usersBaseURI)
+					.when()
+						.post(usersEndPoint);
 		
 		return response;
 	}
-	
-
 
 }
